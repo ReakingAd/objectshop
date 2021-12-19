@@ -1,0 +1,22 @@
+{
+  "name": "objectshop",
+  "version": "1.0.0",
+  "description": "utils operate JavaScript Object\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bA lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReakingAd/objectshop.git"
+  },
+  "keywords": [
+    "object"
+  ],
+  "author": "Floyd Biao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReakingAd/objectshop/issues"
+  },
+  "homepage": "https://github.com/ReakingAd/objectshop#readme"
+}
