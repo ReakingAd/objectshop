@@ -37,6 +37,7 @@ function setDirect(obj, keyname, newValue){
 }
 
 function set(obj, path, newValue){
+    console.log('path', path)
     if(!isObject(obj) && !isArray(obj)){
         console.warn('Please check param type, Object or Array needed')
         return obj
@@ -47,7 +48,7 @@ function set(obj, path, newValue){
     let _obj = deepCopy(obj)
     let _path = [...path]
     if(_path.length === 1){
-        let key = _path[0];
+        let key = _path.shift();
         return setDirect(_obj, key, newValue)
     }
     else{
