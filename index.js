@@ -37,7 +37,6 @@ function setDirect(obj, keyname, newValue){
 }
 
 function set(obj, path, newValue){
-    console.log('path', path)
     if(!isObject(obj) && !isArray(obj)){
         console.warn('Please check param type, Object or Array needed')
         return obj

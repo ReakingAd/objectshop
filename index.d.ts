@@ -2,7 +2,7 @@ type PathNode = string | number;
 
 export = objectshop;
 
-export as namespace objectshop;
+export as namespace __;
 
 declare namespace objectshop {
     function get(obj: object, path: Array<PathNode>);
