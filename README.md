@@ -10,12 +10,13 @@ $ npm i --save objectshop
 
 In Node.js:
 ```javascript
-var OBJECTSHOP = require('objectshop');
-const obj1 = {
+var objectshop = require('objectshop');
+const obj = {
     a: {
         b: ['b1', 'b2', 'b3']
     }
 }
-let value = OBJECTSHOP.get(obj1, ['a', 'b', 1]) // b2
-let newObj = OBJECTSHOP.set(obj1, ['a', 'b'], 'newStr') // {a: {b: 'newStr}}
+let hasA = objectshop.has(obj, ['a', 'b']) // true
+let value = objectshop.get(obj, ['a', 'b', 1]) // b2
+let newObj = objectshop.set(obj, ['a', 'b'], 'newStr') // {a: {b: 'newStr'}}
 ```

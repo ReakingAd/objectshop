@@ -7,7 +7,7 @@ export as namespace objectshop;
 
 declare namespace objectshop {
     function has(src:any, path: Array<PathNode> | PathNode): boolean;
-    function get(obj: Data, path: Array<PathNode> | PathNode);
-    function set<T extends Data>(obj: T, path: Array<PathNode> | PathNode, newValue: any): T;
+    function get(src: Data, path: Array<PathNode> | PathNode);
+    function set<T extends Data>(src: T, path: Array<PathNode> | PathNode, value: any): T;
     function type(src: any): string;
 }

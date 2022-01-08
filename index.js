@@ -14,7 +14,7 @@ const { deepCopy } = require('./utils')
     objectshop.type(new Date()) // date
  * @param {any} src 
  */
-function type(src){
+const type = src => {
     const rType = /(\[object\s)([a-zA-Z]*?)(\]$)/;
     const typeDesc = Object.prototype.toString.call(src);
     const matchRes = typeDesc.match(rType)
@@ -73,6 +73,7 @@ function get(src, path){
     if(isArray(path) && path.length === 0) return undefined;
 
     let point = 0, len = path.length, dest = deepCopy(src);
+
     while(point < len){
         let key = path[point];
         if(!_hasDirect(dest, key)){
@@ -116,7 +117,8 @@ const set = (src, path, newValue) => {
 
     if(len === 1) return _setDirect(src, path[0], newValue)
 
-    let layer, key = path[0], childKey = path[1]
+    let layer, key = path[0], childKey = path[1];
+
     if(has(src, key)){
         layer = src[key]
     }
@@ -125,10 +127,10 @@ const set = (src, path, newValue) => {
     }
     let dest = _setDirect(src, key, set(layer, path.slice(1), newValue))
     
-    return dest
+    return dest;
 }
 
-const OBJECTSHOP = {
+const objectshop = {
     has, get, set, type
 }
-module.exports = OBJECTSHOP
+module.exports = objectshop
