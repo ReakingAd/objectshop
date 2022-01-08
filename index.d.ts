@@ -1,3 +1,4 @@
+type Data = object | Array<any>;
 type PathNode = string | number;
 
 export = objectshop;
@@ -5,6 +6,8 @@ export = objectshop;
 export as namespace objectshop;
 
 declare namespace objectshop {
-    function get(obj: object, path: Array<PathNode>);
-    function set(obj: object, path: Array<PathNode>, newValue: any)
+    function has(src:any, path: Array<PathNode> | PathNode): boolean;
+    function get(obj: Data, path: Array<PathNode> | PathNode);
+    function set<T extends Data>(obj: T, path: Array<PathNode> | PathNode, newValue: any): T;
+    function type(src: any): string;
 }
