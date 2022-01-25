@@ -1,4 +1,4 @@
-const { deepCopy } = require('./utils')
+// const { deepCopy } = require('./utils')
 
 /**
  * @desc 返回类型
@@ -130,7 +130,28 @@ const set = (src, path, newValue) => {
     return dest;
 }
 
-const objectshop = {
-    has, get, set, type
+function deepCopy(src){
+    if(!isObject(src) && !isArray(src)){
+        return src;
+    }
+    
+    let dest;
+
+    if(isArray(src)) 
+        dest = src.map(el => deepCopy(el));
+
+    if(isObject(src)){
+        dest = Object.keys(src).reduce((prev, curr) => ({
+            ...prev,
+            [curr]: deepCopy(src[curr])
+        }), {})
+    }
+
+    return dest;
 }
+
+const objectshop = {
+    has, get, set, type, deepCopy
+}
+
 module.exports = objectshop

@@ -10,4 +10,5 @@ declare namespace objectshop {
     function get(src: Data, path: Array<PathNode> | PathNode);
     function set<T extends Data>(src: T, path: Array<PathNode> | PathNode, value: any): T;
     function type(src: any): string;
+    function deepCopy<T>(src: T): T;
 }
